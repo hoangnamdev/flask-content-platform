@@ -7,7 +7,8 @@ services:
     ports:
       - "5000:5000"
     env_file:
-      - .env
+      - path: .env
+        required: false
     volumes:
       - ./blogposts.db:/app/blogposts.db
       - ./static/assets:/app/static/assets
