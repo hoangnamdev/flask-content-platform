@@ -1,6 +1,6 @@
 # Flask Content Platform & Blog
 
-A lightweight blog and portfolio web application built with Python, Flask, SQLite, and Docker.
+A lightweight blog web application built with Python, Flask, SQLite, and Docker.
 
 ## Overview
 
