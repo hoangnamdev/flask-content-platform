@@ -1,6 +1,6 @@
 # Flask Content Platform & Blog
 
-A lightweight blog web application built with Python, Flask, SQLite, and Docker.
+Lightweight blog web application built with Python, Flask, SQLite, and Docker.
 
 ## Overview
 
@@ -18,19 +18,19 @@ This is a content management system made in Flask. It includes post creation, ta
 ## Architectural Choices
 
 ### SQLite and Local Static Storage
-The scope of the project is intentionally kept small and self-contained, relying on an embedded SQLite database and local static file storage (`static/assets/`). This avoids introducing third-party cloud database services, which are unnecessary external overheads.
+The scope of the project is intentionally kept small and self-contained, relying on an embedded SQLite database and local static file storage (`static/assets/`). This approach avoids introducing third-party cloud database services, which are unnecessary external overheads.
 
 The benefits are:
 - Minimal, easy-to-maintain configuration.
 - Low resource usage.
 
 ### Security Implementation
-Security features are deliberately kept simple and practical:
+Security features are kept simple and practical:
 
-- Parameterized SQL Queries: Use parameter binding to prevent SQL injection vulnerabilities.
-- Password Hashing: User authentication relies on Werkzeug's cryptographic password hashing.
+- Parameterized SQL Queries: Parameter binding prevents SQL injection.
+- Password Hashing: Relies on Werkzeug's cryptographic password hashing.
 - File Upload Sanitization: Processed with `secure_filename()`, preventing path traversal attacks.
-- Session Protection: Administrative routes are protected with a `@login_required` decorator.
+- Session Protection: Administrative routes protected with `@login_required` decorator.
 - Cache Headers: HTTP response headers prevent proxy caching on sensitive pages.
 
 ### Containerization
