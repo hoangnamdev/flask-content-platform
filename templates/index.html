@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/templates/index.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="main--topics">
+            <p class="main--topics__headings">🏷️ Topics</p>
+            <div id="topics__container">
+                {% for topic in topics %}
+                    <a href="/topics/{{topic.tags}}" class="topics">{{topic.tags}}</a>
+                {% endfor %}
+            </div>
+            <div class="main--topics__btn">
+                <p>All</p>
+                <a href="/topics" class="main--topics__redirect">&#8594;</a>
+            </div>
+        </div>
+        <div class="main--posts">
+            <p class="main--posts__headings">📝 Latest Posts</p>
+            <div id="posts__container">
+                    {% for post in posts %}
+                    <div class="posts">
+                        <img class="posts--image" src="{{post.imgsrc}}">
+                        <h1 class="posts--title">{{post.title}}</h1>
+                        <p class="posts--subtext">{{post.subtext}}</p>
+                        <p class="posts--datetime">{{post.datetime}}</p>
+                        <a href="/posts/{{post.id}}" class="posts--redirect">&#8594;</a>
+                    </div>
+                    {% endfor %}
+            </div>
+            <div class="main--posts__btn">
+                <p>All</p>
+                <a href="/posts" class="main--posts__redirect">&#8594;</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: flask-cms
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./blogposts.db:/app/blogposts.db
+      - ./static/assets:/app/static/assets
+    restart: unless-stopped

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/templates/topics.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <p class="main--topics__headings">🏷️ Topics</p>
+        {% for post in posts %}
+            <a href="/topics/{{post.tags}}" class="topics">{{post.tags}}</a>
+        {% endfor %}
+    </main>
+{% endblock %}

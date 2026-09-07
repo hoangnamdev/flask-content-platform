@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/templates/postslist.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+      <p class="main--posts__headings">📝 Latest posts</p>
+      <div id="posts__container">
+        {% for post in posts %}
+        <div class="posts">
+            <img class="posts--image" src="/{{post.imgsrc}}">
+            <h1 class="posts--title">{{post.title}}</h1>
+            <p class="posts--subtext">{{post.subtext}}</p>
+            <p class="posts--datetime">{{post.datetime}}</p>
+            <a href="/posts/{{post.id}}" class="posts--redirect">&#8594;</a>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,12 @@
+nav {
+    background: var(--about-top);
+}
+
+header {
+    background: var(--about-top);
+}
+
+.about--text {
+    padding: 2% 5% 2% 5%;
+    font-size: 1.5rem;
+}

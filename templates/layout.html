@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#0D1117" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nam's Blog</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/site.webmanifest">
+    <link rel="stylesheet" href="/static/normalize.css">
+    <link rel="stylesheet" href="/static/layout.css">
+    {% block css %}{% endblock %}
+</head>
+
+<body>
+    <nav>
+        <div class="nav--left__items">
+            <p class="nav--left__maintext">Nam,</p>
+            <p class="nav--left__subtext">by Nam</p>
+        </div>
+        <div class="nav--right__items">
+            <a href="/" class="nav--right__redirect">🏠</a>
+            <a href="/about" class="nav--right__redirect">About</a>
+        </div>
+    </nav>
+    <header>
+        <div class="header__headings">
+            <h1>Nam.</h1>
+            <p>thoughts, code & notes</p>
+            <!-- Unimplemented
+</div>
+<div class="header__search">
+<p>Search</p>
+</div>
+-->
+    </header>
+    {% block body %}{% endblock %}
+    <footer>
+        <p class="typewrite" data-period="500"
+            data-type='[ "Thanks for visiting.", "Code, projects, and thoughts.", "Enjoy reading!" ]'>
+            <span class="wrap"></span>
+        </p>
+    </footer>
+    <script src="/static/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="static/templates/upload.css">
+{% endblock %}
+
+{% block body %}
+    <main>
+        <form method="post" enctype="multipart/form-data">
+            <textarea placeholder="title" name="title"></textarea>
+            <textarea placeholder="subtext" name="subtext"></textarea>
+            <textarea placeholder="body" name="body" class="multiline"></textarea>
+            <textarea placeholder="topic" name="topic"></textarea>
+            <input type="file" name="thumbnail"/>
+            <input type="submit">
+        </form>
+    </main>
+{% endblock %}
